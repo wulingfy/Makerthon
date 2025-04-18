@@ -8,3 +8,4 @@
 
 `python manage.py makemigrations`
 `python manage.py migrate` --> CHẠY MIGRATE MỖI LẦN THAY ĐỔI DATABASE
+`pip install assemblyai` --> CÀI ĐỂ CHẠY API STT CỦA ASSEMBLY (ƯU TIÊN SÀI KEY CỦA TAO COMMIT TRONG FILE)
