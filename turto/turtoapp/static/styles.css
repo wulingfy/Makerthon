@@ -1,0 +1,40 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    /*== COLORS ==*/
+    --popoff-color: #00AA3B;
+    --primary-color: #03A389;
+    --secondary-color: #004F3F;
+    --dark-color: #03382d;
+}
+
+body {
+    background-color: var(--secondary-color);
+}
+
+.fill-primary { background-color: var(--primary-color); }
+.fill-popoff { background-color: var(--popoff-color); }
+.fill-secondary { background-color: var(--secondary-color); }
+.fill-dark { background-color: var(--dark-color); }
+
+
+/* .nav-link {
+    background-color: var(--primary-color) !important;
+}
+
+.navbar-brand {
+    background-color: var(--primary-color) !important;
+} */
+
+.splash-img {
+    width: 150px;
+    height: 50px;
+    overflow: hidden;
+    margin-top: 2px;
+}
