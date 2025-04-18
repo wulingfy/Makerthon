@@ -9,7 +9,7 @@ import os
 import sounddevice as sd
 from scipy.io.wavfile import write
 
-def speech_to_text(duration,fs:int = 16000) -> str:
+def get_text(duration,fs:int = 16000) -> str:
     # Your API token is already set here
     aai.settings.api_key = "91ff0567d6314bdba344fc0c9f220571"
 
