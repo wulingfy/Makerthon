@@ -15,3 +15,5 @@
 
 `pip install SpeechRecognition` --> Sài tạm trước khi đổi, như tên
 
+`pip install openai` --> chạy nếu sử dụng LLM tư OpenAI
+
