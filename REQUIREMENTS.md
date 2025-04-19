@@ -17,3 +17,4 @@
 
 `pip install openai` --> chạy nếu sử dụng LLM tư OpenAI
 
+`pip install sounddevice soundfile keyboard` --> SOUND ĐỂ THU ÂM, KEYBOARD ĐỂ DÙNG PHÍM
