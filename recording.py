@@ -32,12 +32,12 @@ def stop_recording():
         file.close()
     is_recording = False
     print("Done recording, save to", filename)
-    text = speaker.get_text()
-    print("USER: " + text)
-    reply = processing.response(text)
-    print("BOT: " + reply)    
+    text = speaker.get_text() # get text
+    print("USER: " + text) # trả text   
+    reply = processing.response(text) # response AI
+    print("BOT: " + reply) # trả response
     print("PRESS SPACE TO START/STOP")
-    
+
 print("PRESS SPACE TO START/STOP")  
 def main_loop():
     global is_recording
@@ -51,7 +51,7 @@ def main_loop():
         keyboard.wait('space', suppress=True)
 
 def start_conversation():
-    threading.Thread(target=main_loop, daemon=True).start()
+    threading.Thread(target=main_loop, daemon=True).start() # loop
 
 # EXIT
 if __name__ == "__main__":
