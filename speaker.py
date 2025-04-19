@@ -40,7 +40,7 @@ def get_text(duration,fs:int = 16000) -> str:
     return transcript.text
 
 if __name__ == "__main__":
-        result = speech_to_text(5)
+        result = get_text(5)
         print(result)
 
 # Assembly giới hạng 50 đồng biden mỗi tài khoản free, sài tiết kiệm please và dùng key của tao, nếu hết hạn thì sài key của tụi bây
