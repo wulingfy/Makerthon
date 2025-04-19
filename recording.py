@@ -4,8 +4,9 @@ import keyboard
 import threading
 import speaker
 import processing
+import tts
 
-fs = 44100
+fs = 16000
 channels = 1
 filename = 'output.wav'
 
@@ -35,6 +36,7 @@ def stop_recording():
     text = speaker.get_text() # get text
     print("USER: " + text) # trả text   
     reply = processing.response(text) # response AI
+    tts.voice(reply)
     print("BOT: " + reply) # trả response
     print("PRESS SPACE TO START/STOP")
 
