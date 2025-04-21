@@ -1,4 +1,5 @@
 {% extends "navbar.html" %} {% block title %} Main {% endblock %} 
+{% load static %}
 
 {% block content %} 
 
@@ -6,7 +7,10 @@
         <div class="rec_section">
             <div class="spacer"></div>
             
-            <button class="record"> Record </button>
+            <div class="button-group">
+                <button class="record square-btn"> <img src="{% static 'assets/mic.png' %}" alt="Record" class="rec-img"/> </button>
+                <button class="submit flex-grow-btn"><b>Submit</b></button>
+            </div>
         </div>
         <div class="main-content">
             <h2>Main Content</h2>
