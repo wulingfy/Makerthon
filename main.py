@@ -1,5 +1,6 @@
 import speaker 
 import processing
+import recording
 
 Process = True
 keyword = [
@@ -18,8 +19,9 @@ def turn_off(script):
             return False
     return True        
 
-text = speaker.get_text()
+import keyboard
 
-print("USER: " + text)
-reply = processing.response(text)
-print("BOT: " + reply)
+
+if __name__ == "__main__":
+    recording.start_conversation()
+    keyboard.wait('esc')  # keep script running 

@@ -9,7 +9,7 @@ import os
 import sounddevice as sd
 from scipy.io.wavfile import write
 
-def get_text(duration,fs:int = 16000) -> str:
+def get_text(fs:int = 16000) -> str:
     # Your API token is already set here
     aai.settings.api_key = "91ff0567d6314bdba344fc0c9f220571"
 
@@ -17,20 +17,20 @@ def get_text(duration,fs:int = 16000) -> str:
     transcriber = aai.Transcriber()
 
     # Record
-    print("Recording")
-    recording = sd.rec(int(duration * fs), samplerate=fs, channels=1, dtype='int16')
+    # print("Recording")
+    # recording = sd.rec(int(duration * fs), samplerate=fs, channels=1, dtype='int16') BỎ RECORD VÌ DÙNG THAY THỂ Ở "RECORDING.PY"
 
     sd.wait()
 
     # Saving file
-    with tempfile.NamedTemporaryFile(delete=False, suffix=".wav") as tmpfile:
-                write(tmpfile.name, fs, recording)
-                audio_path = tmpfile.name
-
+    # with tempfile.NamedTemporaryFile(delete=False, suffix=".wav") as tmpfile: BỎ NỐT VÌ "RECORDING.PY" XUẤT FILE
+    #             write(tmpfile.name, fs, recording)
+    #             audio_path = tmpfile.name
+    audio_path = 'output.wav' # GET AUDIO TỪ FILE
     # If you have a local audio file, you can transcribe it using the code below.
     # Make sure to replace the filename with the path to your local audio file.
     print("Transcribting...")
-    transcript = transcriber.transcribe(audio_path  )
+    transcript = transcriber.transcribe(audio_path)
 
     # Alternatively, if you have a URL to an audio file, you can transcribe it with the following code.
     # Uncomment the line below and replace the URL with the link to your audio file.
@@ -40,7 +40,7 @@ def get_text(duration,fs:int = 16000) -> str:
     return transcript.text
 
 if __name__ == "__main__":
-        result = speech_to_text(5)
+        result = get_text()
         print(result)
 
 # Assembly giới hạng 50 đồng biden mỗi tài khoản free, sài tiết kiệm please và dùng key của tao, nếu hết hạn thì sài key của tụi bây
