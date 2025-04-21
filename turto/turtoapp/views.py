@@ -4,4 +4,4 @@ from django.shortcuts import render, HttpResponse
 
 def home(request):
     # return HttpResponse("Hello, world!")
-    return render(request, 'example.html')
+    return render(request, 'navbar.html')

@@ -8,10 +8,10 @@
 
 :root {
     /*== COLORS ==*/
-    --popoff-color: #00AA3B;
-    --primary-color: #006752;
-    --secondary-color: #004F3F;
-    --dark-color: #03382d;
+    --popoff-color: #00d64b;
+    --primary-color: #2c2c4b;
+    --secondary-color: #28283d;
+    --dark-color: #242439;
 }
 
 body {
