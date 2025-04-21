@@ -1,0 +1,17 @@
+{% extends "navbar.html" %} {% block title %} Main {% endblock %} 
+
+{% block content %} 
+
+    <div class="page-content">
+        <div class="rec_section">
+            <div class="spacer"></div>
+            
+            <button class="record"> Record </button>
+        </div>
+        <div class="main-content">
+            <h2>Main Content</h2>
+            {% lorem 60 w random %}
+        </div>
+    </div>
+
+{% endblock %}
