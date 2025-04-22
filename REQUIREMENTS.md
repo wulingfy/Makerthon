@@ -23,7 +23,7 @@
 
 `pip install cffi` --> ĐÉO BIẾT ĐỂ LÀM GÌ NHƯNG MÀ CỨ CÀI ĐỂ CHẠY ASSESSMENT.PY
 
-`pip install gevent==1.4.0` --> ĐÉO BIẾT ĐỂ LÀM GÌ NHƯNG MÀ CỨ CÀI ĐỂ CHẠY ASSESSMENT.PY
+`pip install gevent` --> ĐÉO BIẾT ĐỂ LÀM GÌ NHƯNG MÀ CỨ CÀI ĐỂ CHẠY ASSESSMENT.PY
 
 `pip install pycparser==2.19` --> ĐÉO BIẾT ĐỂ LÀM GÌ NHƯNG MÀ CỨ CÀI ĐỂ CHẠY ASSESSMENT.PY
 
