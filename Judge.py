@@ -26,6 +26,7 @@ response.text
 def check_script(mess):
        reply = chat.send_message(mess)
        return reply.text
-# TEST
-# fix = check_script("I doesn't like cat")
-# print(fix)
+
+if __name__ == "__main__":
+       fix = check_script("BaoLam are gay")
+       print(fix)
