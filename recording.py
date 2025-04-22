@@ -8,7 +8,7 @@ import tts
 
 fs = 16000
 channels = 1
-filename = 'output.wav'
+filename = 'audio_data/output.wav'
 
 is_recording = False
 stream = None
@@ -34,13 +34,19 @@ def stop_recording():
     is_recording = False
     print("Done recording, save to", filename)
     text = speaker.get_text() # get text
-    print("USER: " + text) # trả text   
+    with open("text_data/script.txt", "w") as file:
+        file.write(text)
+    print("USER: " + text) # trả text     
     reply = processing.response(text) # response AI
+    with open("text_data/AI_script.txt", "w") as file:
+        file.write(reply)
+        
     tts.voice(reply)
     print("BOT: " + reply) # trả response
-    print("PRESS SPACE TO START/STOP") ## press space to start, press again to stop
+    print("PRESS SPACE TO START/STOP")
 
 print("PRESS SPACE TO START/STOP")  
+
 def main_loop():
     global is_recording
     while True:
