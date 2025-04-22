@@ -31,3 +31,5 @@
 
 `pip install websocket-client` --> ĐÉO BIẾT ĐỂ LÀM GÌ NHƯNG MÀ CỨ CÀI ĐỂ CHẠY ASSESSMENT.PY
 
+`pip install scipy` --> QUÊN MẸ DÙNG ĐỂ LÀM GÌ
+
