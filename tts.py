@@ -3,9 +3,9 @@ from playsound import playsound
 
 def voice(text):
     data = stream_elements.requestTTS(text, stream_elements.Voice.Ivy.value) 
-    with open('aivoice.mp3', '+wb') as file:
+    with open('audio_data/aivoice.mp3', '+wb') as file:
         file.write(data)
-    playsound('aivoice.mp3')
+    playsound('aivoice.mp3/aivoice.mp3')
 
 if __name__ == "__main__":
     print("TEST")
