@@ -19,4 +19,15 @@
 
 `pip install sounddevice soundfile keyboard` --> SOUND ĐỂ THU ÂM, KEYBOARD ĐỂ DÙNG PHÍM
 
-`pip install markdown2` --> để transfer markdown qua html tag
+`pip install six` --> ĐÉO BIẾT ĐỂ LÀM GÌ NHƯNG MÀ CỨ CÀI ĐỂ CHẠY ASSESSMENT.PY
+
+`pip install cffi` --> ĐÉO BIẾT ĐỂ LÀM GÌ NHƯNG MÀ CỨ CÀI ĐỂ CHẠY ASSESSMENT.PY
+
+`pip install gevent==1.4.0` --> ĐÉO BIẾT ĐỂ LÀM GÌ NHƯNG MÀ CỨ CÀI ĐỂ CHẠY ASSESSMENT.PY
+
+`pip install pycparser==2.19` --> ĐÉO BIẾT ĐỂ LÀM GÌ NHƯNG MÀ CỨ CÀI ĐỂ CHẠY ASSESSMENT.PY
+
+`pip install websocket` --> ĐÉO BIẾT ĐỂ LÀM GÌ NHƯNG MÀ CỨ CÀI ĐỂ CHẠY ASSESSMENT.PY
+
+`pip install websocket-client` --> ĐÉO BIẾT ĐỂ LÀM GÌ NHƯNG MÀ CỨ CÀI ĐỂ CHẠY ASSESSMENT.PY
+
