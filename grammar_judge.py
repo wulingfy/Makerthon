@@ -1,8 +1,8 @@
 import google.generativeai as genai
 import markdown2
-genai.configure(api_key="AIzaSyARpFsUQp-xF_YrESLvshU7wkoBWd2iL7Q")
+genai.configure(api_key="AIzaSyBjhzv-qqltMGUvbr4qpCUI_oZ6f9FdfEM")
 # Gemini - 1.5 - pro
-model = genai.GenerativeModel("gemini-1.5-pro")  
+model = genai.GenerativeModel("gemini-1.5-flash")  
 
 # Định nghĩa vai trò bằng prompt hệ thống
 system_instruction = """"

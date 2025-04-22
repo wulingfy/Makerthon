@@ -24,21 +24,21 @@ def main_loop():
         else:
             print('DONE RECORDING, RESPONDING')
             text = recording.stop_recording()
+            with open('text_data/script.txt', 'w', encoding='utf-8') as file:
+                file.write(text) 
             response_bot(text)
         # Wait for release
         keyboard.wait('space', suppress=True)
 
-
-for script in storage_chat:
-    # get reply
-    reply = grammar_judge.check_script(script)
-    # write file
-    with open('text_data/reply.txt', '+wb') as file:
-        file.write(reply)
+def judging():
+    for script in storage_chat:
+        reply = grammar_judge.check_script(script)
+        with open('text_data/reply.txt', 'a', encoding='utf-8') as file:
+            file.write(reply + '\n')
 
 if __name__ == "__main__":
     start_conversation() 
     keyboard.wait('esc')
     if is_recording:
         recording.stop_recording()
-
+    judging()

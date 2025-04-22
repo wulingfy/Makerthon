@@ -32,5 +32,39 @@
     {% block content %} {% endblock %}
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" ></script>
+    <script>
+      let waveInterval;
+
+      function startWaveAnimation() {
+          const bars = document.querySelectorAll('#soundwave span');
+          waveInterval = setInterval(() => {
+              bars.forEach((bar, index) => {
+                  const randomHeight = Math.floor(Math.random() * 90) + 10;  // Between 10px and 40px
+                  const delay = index * 100;  // Stagger the changes between bars
+
+                  // Apply random height with a delay for a smoother wave effect
+                  setTimeout(() => {
+                      bar.style.height = `${randomHeight}px`;
+                  }, delay);
+              });
+          }, 100);  // Update every 500ms for smoothness
+      }
+
+      function stopWaveAnimation() {
+          clearInterval(waveInterval);
+      }
+
+      function toggleWave() {
+          const wave = document.getElementById("soundwave");
+          if (wave.classList.contains("show")) {
+              wave.classList.remove("show");
+              stopWaveAnimation();
+          } else {
+              wave.classList.add("show");
+              startWaveAnimation();
+          }
+      }
+
+    </script>      
   </body>
 </html>
