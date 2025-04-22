@@ -38,7 +38,7 @@ def stop_recording():
     reply = processing.response(text) # response AI
     tts.voice(reply)
     print("BOT: " + reply) # trả response
-    print("PRESS SPACE TO START/STOP")
+    print("PRESS SPACE TO START/STOP") ## press space to start, press again to stop
 
 print("PRESS SPACE TO START/STOP")  
 def main_loop():
