@@ -26,7 +26,7 @@ def get_text(fs:int = 16000) -> str:
     # with tempfile.NamedTemporaryFile(delete=False, suffix=".wav") as tmpfile: BỎ NỐT VÌ "RECORDING.PY" XUẤT FILE
     #             write(tmpfile.name, fs, recording)
     #             audio_path = tmpfile.name
-    audio_path = 'output.wav' # GET AUDIO TỪ FILE
+    audio_path = 'audio_data/output.wav' # GET AUDIO TỪ FILE
     # If you have a local audio file, you can transcribe it using the code below.
     # Make sure to replace the filename with the path to your local audio file.
     print("Transcribting...")
