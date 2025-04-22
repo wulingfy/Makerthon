@@ -23,7 +23,7 @@ def start_recording():
     is_recording = True
     print("Recording Started")
 
-def stop_recording():
+def stop_recording() -> str:
     global is_recording, stream, file
 
     if stream:
@@ -34,36 +34,25 @@ def stop_recording():
     is_recording = False
     print("Done recording, save to", filename)
     text = speaker.get_text() # get text
-    with open("text_data/script.txt", "w") as file:
-        file.write(text)
-    print("USER: " + text) # trả text     
-    reply = processing.response(text) # response AI
-    with open("text_data/AI_script.txt", "w") as file:
-        file.write(reply)
-        
-    tts.voice(reply)
-    print("BOT: " + reply) # trả response
-    print("PRESS SPACE TO START/STOP")
+    # with open("text_data/script.txt", "w") as file:
+    #     file.write(text)
+    # print("PRESS SPACE TO START/STOP")    
+    return text
 
-print("PRESS SPACE TO START/STOP")  
+# def main_loop():
+#     global is_recording
+#     while True:
+#         keyboard.wait('space')
+#         if not is_recording:
+#             start_recording()
+#         else:
+#             stop_recording()
+#         # Wait for release
+#         keyboard.wait('space', suppress=True)
 
-def main_loop():
-    global is_recording
-    while True:
-        keyboard.wait('space')
-        if not is_recording:
-            start_recording()
-        else:
-            stop_recording()
-        # Wait for release
-        keyboard.wait('space', suppress=True)
-
-def start_conversation():
-    threading.Thread(target=main_loop, daemon=True).start() # loop
+# def start_conversation():
+#     threading.Thread(target=main_loop, daemon=True).start() # loop
 
 # EXIT
 if __name__ == "__main__":
-    start_conversation() 
-    keyboard.wait('esc')
-    if is_recording:
-        stop_recording()
+    print("TEST")

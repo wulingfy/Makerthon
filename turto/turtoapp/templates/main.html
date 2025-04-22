@@ -11,9 +11,8 @@
                 <button class="record flex-grow-btn"> 
                     <img src="{% static 'assets/mic.png' %}" alt="Record" class="rec-img"/> 
                 </button>
-                <button class="submit flex-grow-btn"> 
+                <button onclick="window.location.href='{% url 'judge' %}'" class="submit flex-grow-btn"> 
                     <img src="{% static 'assets/send.png' %}" alt="Submit" class="rec-img"/>
-                    <b>Submit</b>
                 </button>
             </div>
         </div>

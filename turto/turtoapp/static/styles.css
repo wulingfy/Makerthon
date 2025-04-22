@@ -7,6 +7,10 @@
     height: calc(100vh - 56px);
 }
 
+.navbar-brand h3 {
+    font-family: 'Poppins', sans-serif;
+}
+
 html, body {
     margin: 0;
     padding: 0;
