@@ -8,13 +8,36 @@
             <div class="spacer"></div>
             
             <div class="button-group">
-                <button class="record square-btn"> <img src="{% static 'assets/mic.png' %}" alt="Record" class="rec-img"/> </button>
-                <button class="submit flex-grow-btn"><b>Submit</b></button>
+                <button class="record flex-grow-btn"> 
+                    <img src="{% static 'assets/mic.png' %}" alt="Record" class="rec-img"/> 
+                </button>
+                <button class="submit flex-grow-btn"> 
+                    <img src="{% static 'assets/send.png' %}" alt="Submit" class="rec-img"/>
+                    <b>Submit</b>
+                </button>
             </div>
         </div>
-        <div class="main-content">
-            <h2>Main Content</h2>
-            {% lorem 60 w random %}
+        <div class="page-wrapper">
+            <div class="main-content scrollable-list">
+                <div class="user-text right-anchor">
+                    {% lorem 12 w random %}
+                </div>
+                <div class="bot-text left-anchor">
+                    {% lorem 43 w random %}
+                </div>
+                <div class="user-text right-anchor">
+                    {% lorem 4 w random %}
+                </div>
+                <div class="bot-text left-anchor">
+                    {% lorem 21 w random %}
+                </div>
+                <div class="user-text right-anchor">
+                    {% lorem 31 w random %}
+                </div>
+                <div class="bot-text left-anchor">
+                    {% lorem 55 w random %}
+                </div>
+            </div>
         </div>
     </div>
 
