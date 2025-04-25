@@ -118,6 +118,8 @@ def on_message(ws, message):
             if (status == 2):
                 xml = base64.b64decode(result)
                 # By default, python uses gbk encoding on windows, you need to do encoding conversion when you print, and other systems such as mac will adjust the encoding by themselves.
+
+                # VIẾT RA FILE XML ĐỂ DÙNG
                 with open("text_data/assessment-point.xml", "w", encoding="utf-8") as file:
                     file.write(xml.decode("gbk"))
 
