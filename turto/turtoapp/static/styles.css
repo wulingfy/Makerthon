@@ -22,6 +22,7 @@ html, body {
 
 :root {
     /*== COLORS ==*/
+    --popoff-color: #32bd83;
     --primary-color: #2b2b41;
     --secondary-color: #28283d;
     --dark-color: #242439;
@@ -200,17 +201,44 @@ button:focus {
     opacity: 1;
 }
 
-.soundwave span:nth-child(2) { animation-delay: 0.2s; }
-.soundwave span:nth-child(3) { animation-delay: 0.4s; }
-.soundwave span:nth-child(4) { animation-delay: 0.6s; }
-.soundwave span:nth-child(5) { animation-delay: 0.8s; }
-.soundwave span:nth-child(6) { animation-delay: 1.0s; }
-.soundwave span:nth-child(7) { animation-delay: 1.2s; }
-.soundwave span:nth-child(8) { animation-delay: 1.4s; }
-.soundwave span:nth-child(9) { animation-delay: 1.6s; }
-.soundwave span:nth-child(10) { animation-delay: 1.8s; }
-
 @keyframes bounce {
     0%, 100% { transform: scaleY(1); }
     50% { transform: scaleY(2); }
+}
+
+/* Judge Page */
+
+.judge-title {
+    color: white;
+    text-align: center;
+}
+
+.split {
+    display: flex;
+    height: calc(100vh - 56px);
+}
+
+.section {
+    flex: 1;
+    padding: 40px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    margin: 10px;
+    border-radius: 35px;
+}
+
+.grammar-section {
+    color: white;
+    background-color: var(--dark-color);
+}
+
+.pronun-section {
+    color: white;
+    background-color: var(--dark-color);
+}
+
+@media (max-width: 768px) {
+    .split {
+        flex-direction: column;
+    }
 }

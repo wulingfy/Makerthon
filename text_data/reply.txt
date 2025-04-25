@@ -19,3 +19,14 @@
 
 <p>Great job noticing your mistake! Keep practicing, and you'll get the hang of it.  Let me know when you have another sentence.</p>
 
+<p><strong>Correction:</strong>
+- "Are you hear me?" → "Can you hear me?" or "Do you hear me?"</p>
+
+<p><strong>Why:</strong>
+- "Hear" is a verb meaning to perceive sound.  The sentence structure "Are you hear me?" is grammatically incorrect.  We need a verb that asks a question about the ability to hear. "Can" implies the ability to hear and "do" implies whether or not you are currently hearing.</p>
+
+<p><strong>Natural versions:</strong>
+- "Can you hear me?" (This is the most common and natural way to ask if someone can hear you.)
+- "Do you hear me?" (This is a bit more forceful or emphasizes the need to be heard.)
+- "Can you hear me okay?" (Adds politeness and checks for clarity)</p>
+
