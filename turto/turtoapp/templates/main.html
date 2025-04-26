@@ -2,7 +2,6 @@
 {% load static %}
 
 {% block content %} 
-
     <div class="page-content">
         <div class="rec_section">
             <div class="spacer"></div>
@@ -22,34 +21,16 @@
             <div class="spacer"></div>
             
             <div class="button-group">
-                <button class="record flex-grow-btn" onclick="toggleWave()"> 
+                <button id="recordButton" class="record flex-grow-btn" onclick="runRecord()"> 
                     <img src="{% static 'assets/mic.png' %}" alt="Record" class="rec-img" /> 
                 </button>
-                <button onclick="window.location.href='{% url 'judge' %}'" class="submit flex-grow-btn"> 
+                <button id="submitButton" onclick="window.location.href='{% url 'judge' %}'" class="submit flex-grow-btn"> 
                     <img src="{% static 'assets/send.png' %}" alt="Submit" class="rec-img"/>
                 </button>
             </div>
         </div>
         <div class="page-wrapper">
-            <div class="main-content scrollable-list">
-                <div class="user-text right-anchor">
-                    {% lorem 12 w random %}
-                </div>
-                <div class="bot-text left-anchor">
-                    {% lorem 43 w random %}
-                </div>
-                <div class="user-text right-anchor">
-                    {% lorem 4 w random %}
-                </div>
-                <div class="bot-text left-anchor">
-                    {% lorem 21 w random %}
-                </div>
-                <div class="user-text right-anchor">
-                    {% lorem 31 w random %}
-                </div>
-                <div class="bot-text left-anchor">
-                    {% lorem 55 w random %}
-                </div>
+            <div id="messageContainer" class="main-content scrollable-list">
             </div>
         </div>
     </div>

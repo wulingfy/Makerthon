@@ -63,10 +63,31 @@ button:focus {
     color: white;
 }
 
+#messageContainer {
+    width: 100%; /* full viewport width */
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+@keyframes pop {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    80% {
+        transform: scale(1.05);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
 .page-wrapper {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+    width: 100vw;
     padding: 20px;
 }
 
@@ -149,6 +170,7 @@ button:focus {
 }
 
 .user-text {
+    animation: pop 0.3s ease-out;
     margin-left: auto;
     background-color: var(--light-color);
     color: white;
@@ -159,6 +181,7 @@ button:focus {
 }
 
 .bot-text {
+    animation: pop 0.3s ease-out;
     background-color: var(--dark-color);
     color: white;
     margin-bottom: 20px;
