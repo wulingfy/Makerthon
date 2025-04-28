@@ -3,24 +3,27 @@
 
 {% block content %} 
 
+
 <div class="split">
     <div class="section grammar-section">
-        <h1 class="judge-title"> Grammar</h1>
-        {% lorem 93 w random %} <br><br>
-
-        {% lorem 78 w random %} <br><br>
-
-        {% lorem 85 w random %} <br><br>
+        <h1 class="judge-title"> Grammar</h1>    
+        <div class="grammar-content">
+            {{ file_content|safe }}
+        </div>
     </div>
 
     <div class="section pronun-section">
         <h1 class="judge-title"> Pronunciation</h1>
 
-        {% lorem 93 w random %} <br><br>
-
-        {% lorem 78 w random %} <br><br>
-
-        {% lorem 85 w random %} <br><br>
+        <div class="pronun-content">
+            {% for c in pronun %}
+                <li>{{ c.content }}</li>
+                <li>{{ c.accuracy_score }}</li>
+                <li>{{ c.fluency_score }}</li>
+                <li>{{ c.standard_score }}</li>
+                <li>{{ c.total_score }}</li>
+            {% endfor %}
+        </div>
     </div>
 </div>
 

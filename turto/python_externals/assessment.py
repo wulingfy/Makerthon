@@ -101,6 +101,9 @@ class Ws_Param(object):
         # print('websocket url :', url)
         return url
 
+wsParam = Ws_Param(APPID='ga6718ea', APIKey='b7ae17b6e95b1b7cd1e9f0b1c13ecff5',
+                       APISecret='0f0dfc033910e25a3d1d53dd18a3f9c7',
+                       AudioFile='turto/audio_data/output.wav', Text=TEXT)
 
 # Handling of received websocket messages
 def on_message(ws, message):
@@ -120,7 +123,7 @@ def on_message(ws, message):
                 # By default, python uses gbk encoding on windows, you need to do encoding conversion when you print, and other systems such as mac will adjust the encoding by themselves.
 
                 # VIẾT RA FILE XML ĐỂ DÙNG
-                with open("text_data/assessment-point.xml", "w", encoding="utf-8") as file:
+                with open("turto/text_data/assessment-point.xml", "w", encoding="utf-8") as file:
                     file.write(xml.decode("gbk"))
 
 
@@ -179,14 +182,10 @@ def on_open(ws):
 
     thread.start_new_thread(run, ())
 
-
-if __name__ == "__main__":
-    # Test it by filling in the correct information here and it will work
+def assess():
     time1 = datetime.now()
     # APPID, APISecret, APIKey information can be obtained in the console - Voice Evaluation (Streaming Version) - Service Interface Authentication Information.
-    wsParam = Ws_Param(APPID='ga6718ea', APIKey='b7ae17b6e95b1b7cd1e9f0b1c13ecff5',
-                       APISecret='0f0dfc033910e25a3d1d53dd18a3f9c7',
-                       AudioFile='audio_data/output.wav', Text=TEXT)
+    
     websocket.enableTrace(False)
     wsUrl = wsParam.create_url()
     ws = websocket.WebSocketApp(wsUrl, on_message=on_message, on_error=on_error, on_close=on_close)
@@ -194,3 +193,6 @@ if __name__ == "__main__":
     ws.run_forever(sslopt={"cert_reqs": ssl.CERT_NONE})
     time2 = datetime.now()
     print(time2 - time1)
+
+if __name__ == "__main__":
+    assess()

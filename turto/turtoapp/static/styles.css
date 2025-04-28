@@ -71,15 +71,12 @@ button:focus {
 
 @keyframes pop {
     0% {
-        transform: scale(0.8);
+        transform: translateY(20px);
         opacity: 0;
     }
-    80% {
-        transform: scale(1.05);
-        opacity: 1;
-    }
     100% {
-        transform: scale(1);
+        transform: translateY(0);
+        opacity: 1;
     }
 }
 
@@ -142,6 +139,11 @@ button:focus {
     cursor: pointer;
 }
 
+#recordButton.processing {
+    background: linear-gradient(45deg, #1b1b29, #2d2d42);
+    cursor: not-allowed; /* show disabled cursor */
+}
+
 .right-anchor {
     top: 20px;
     right: 20px;
@@ -153,6 +155,9 @@ button:focus {
 .left-anchor {
     top: 20px;
     left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
 .rec_section .spacer {
@@ -184,6 +189,8 @@ button:focus {
     animation: pop 0.3s ease-out;
     background-color: var(--dark-color);
     color: white;
+    text-align: start;
+    margin-right: auto;
     margin-bottom: 20px;
     margin-top: 20px;
     max-width: 90%;
@@ -255,13 +262,117 @@ button:focus {
     background-color: var(--dark-color);
 }
 
+.grammar-content {
+    text-wrap: wrap;
+    color: white;
+}
+
 .pronun-section {
     color: white;
     background-color: var(--dark-color);
+}
+
+.pronun-content {
+    text-wrap: wrap;
+    color: white;
 }
 
 @media (max-width: 768px) {
     .split {
         flex-direction: column;
     }
+}
+
+/* Hide the loader initially */
+.hidden {
+    display: none;
+}
+
+  /* Show the loader */
+#loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999; /* on top of everything */
+    pointer-events: none; /* so clicks go through */
+}
+
+#loaderGif {
+    width: 32vh; /* or whatever size you want */
+    height: auto;
+}
+
+/* Blur the message container when processing */
+.blurred {
+    filter: blur(8px);
+    pointer-events: none; /* optional: prevent clicks */
+}
+
+#loadingText {
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    font-family: monospace; /* important for typing effect */
+}
+
+  /* Blinking cursor animation */
+#cursor {
+    display: inline-block;
+    margin-left: 2px;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Styling Modal */
+.modal {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    z-index: 1; /* Sit on top */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.4);/* Black w/ opacity */
+    padding-top: 60px;
+    justify-content: center; /* Horizontally center the modal */
+    align-items: center; /* Vertically center the modal */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: var(--dark-color);
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid var(--primary-color);
+    color:white;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+    border-radius: 16px; /* Optional: Adds rounded corners to the modal */
+}
+
+/* OK Button */
+#okButton {
+    background: linear-gradient(45deg, #299E6D, #A8D961);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+#okButton:hover {
+    background: linear-gradient(45deg, #31b77f, #b9ef6c);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
 }

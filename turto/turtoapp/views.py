@@ -1,19 +1,53 @@
+import os
+from django.conf import settings
 from django.shortcuts import render, HttpResponse
 from django.http import JsonResponse
 from python_externals import recording
+from python_externals import assessment
 from python_externals import processing
 from python_externals import tts
+from python_externals import grammar_judge
+from text_data import convert_xml
 from django.views.decorators.csrf import csrf_exempt
 import json
 
 # Create your views here.
 
+SCRIPT_FILE_PATH = os.path.join(settings.BASE_DIR, 'text_data', 'script.txt')
+REPLY_FILE_PATH = os.path.join(settings.BASE_DIR, 'text_data', 'reply.txt')
+
 def home(request):
-    # return HttpResponse("Hello, world!")
-    return render(request, "main.html")
+    try:
+        # Open the file in write mode to clear its contents
+        with open(SCRIPT_FILE_PATH, 'w') as file:
+            file.truncate(0)  # This clears the file content
+
+        # Now render your page
+        return render(request, 'main.html')  # Change the template name accordingly
+
+    except Exception as e:
+        print(f"Error while clearing the file: {e}")
+        # Optionally, handle errors if needed
+        return render(request, 'error_page.html')  # Render an error page or some fallback
 
 def judge(request):
-    return render(request, "judge.html")
+    grammar_judge.check_script()
+    # assessment.assess()
+    # pronun = convert_xml.get_data_pronunciation()
+
+    #Define the file path
+    file_path = os.path.join('text_data', 'reply.txt')
+    
+    #Read the content of the text file
+    try:
+        with open(file_path, 'r') as file:
+            file_content = file.read()
+    except FileNotFoundError:
+        file_content = "File not found."
+
+    # Pass the content to the template
+    # return render(request, 'judge.html', {'file_content': file_content, 'pronun': pronun})
+    return render(request, 'judge.html', {'file_content': file_content})
 
 @csrf_exempt
 def start_recording_view(request):
@@ -63,3 +97,14 @@ def text_to_speech_view(request):
             return JsonResponse({'status': 'error', 'message': str(e)}, status=500)
 
     return JsonResponse({'status': 'error', 'message': 'Invalid request'}, status=400)
+
+
+# View to start the conversation
+@csrf_exempt
+def start_view(request):
+    try:
+        respond = processing.start()  # Call your function
+        return JsonResponse({'status': 'success', 'respond': respond})
+    except Exception as e:
+        return JsonResponse({'status': 'error', 'message': str(e)})
+    

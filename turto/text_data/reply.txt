@@ -1,32 +1,21 @@
-<p><strong>Correction:</strong></p>
+<p>This is my sentence:</p>
+
+<p>My friend, he is very kind.</p>
+
+<h3>Correction:</h3>
 
 <ul>
-<li>"I doesn't like it" → "I don't like it"</li>
+<li>"My friend, he is very kind" &rarr; "My friend is very kind."</li>
 </ul>
 
-<p><strong>Why:</strong></p>
+<h3>Why:</h3>
 
 <ul>
-<li>As we discussed before, "doesn't" is used with "he," "she," and "it." With "I," we use "don't" (a contraction of "do not").</li>
+<li>The phrase "My friend, he..." is redundant.  "My friend" already functions as the subject of the sentence, so "he" is unnecessary.  It's like saying "My car, it is blue."</li>
 </ul>
 
-<p><strong>Natural Version:</strong></p>
+<h3>Natural version:</h3>
 
 <ul>
-<li>Did you hear me, Chat? I don't like it. (Adding a comma after "Chat" improves the flow and punctuation.)</li>
-<li>Or:  Chat, did you hear me? I don't like it. (This version is slightly more emphatic.)</li>
+<li>My friend is very kind.</li>
 </ul>
-
-<p>Great job noticing your mistake! Keep practicing, and you'll get the hang of it.  Let me know when you have another sentence.</p>
-
-<p><strong>Correction:</strong>
-- "Are you hear me?" → "Can you hear me?" or "Do you hear me?"</p>
-
-<p><strong>Why:</strong>
-- "Hear" is a verb meaning to perceive sound.  The sentence structure "Are you hear me?" is grammatically incorrect.  We need a verb that asks a question about the ability to hear. "Can" implies the ability to hear and "do" implies whether or not you are currently hearing.</p>
-
-<p><strong>Natural versions:</strong>
-- "Can you hear me?" (This is the most common and natural way to ask if someone can hear you.)
-- "Do you hear me?" (This is a bit more forceful or emphasizes the need to be heard.)
-- "Can you hear me okay?" (Adds politeness and checks for clarity)</p>
-

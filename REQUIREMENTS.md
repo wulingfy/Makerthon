@@ -6,7 +6,7 @@
 
 `.\.venv\Scripts\activate` --> KHỞI ĐỘNG VIRTUAL ENVIRONMENT
 
-`python manage.py runserver` --> CHẠY WEB/APP WHATEVER
+[`python manage.py runserver` --> CHẠY WEB/APP WHATEVER](http://127.0.0.1:8000/)
 
 `python manage.py makemigrations`
 `python manage.py migrate` --> CHẠY MIGRATE MỖI LẦN THAY ĐỔI DATABASE
