@@ -1,8 +1,12 @@
 from pyt2s.services import stream_elements
 from playsound import playsound
+from python_externals import assessment
+from text_data import convert_xml
 import os
 def voice(text):
     data = stream_elements.requestTTS(text, stream_elements.Voice.Ivy.value) 
+    assessment.assess()
+    convert_xml.append_data()
     with open("audio_data/aivoice.mp3", '+wb') as file:
         file.write(data)
     playsound("audio_data/aivoice.mp3")

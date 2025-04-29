@@ -1,21 +1,17 @@
-<p>This is my sentence:</p>
-
-<p>My friend, he is very kind.</p>
-
 <h3>Correction:</h3>
 
 <ul>
-<li>"My friend, he is very kind" &rarr; "My friend is very kind."</li>
+<li>"Independence Days of Vietnam" &rarr; "Vietnam's Independence Day"</li>
 </ul>
 
 <h3>Why:</h3>
 
 <ul>
-<li>The phrase "My friend, he..." is redundant.  "My friend" already functions as the subject of the sentence, so "he" is unnecessary.  It's like saying "My car, it is blue."</li>
+<li>"Independence Days" is plural, suggesting multiple independence days. Vietnam celebrates one main independence day.  "Vietnam's Independence Day" is grammatically correct and clearly indicates a single event.</li>
 </ul>
 
 <h3>Natural version:</h3>
 
 <ul>
-<li>My friend is very kind.</li>
+<li>Today we have a school festival for Vietnam's Independence Day.</li>
 </ul>

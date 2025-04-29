@@ -43,7 +43,7 @@ ENT = "en"
 # English question types：read_word（words reading）read_sentence（sentence reading）read_chapter(chapter reading)simple_expression（English situational response）read_choice（English multiple choice）topic（English free-response）retell（English retelling）picture_talk（English picture-taking）oral_translation（English oral translation）
 CATEGORY = "read_sentence"
 # Text to be reviewed utf8 encoded, need to add utf8bom header
-TEXT = '\uFEFF'+ open("text_data/script.txt","r",encoding='utf-8').read()
+TEXT = '\uFEFF'+ open("text_data/user_speech.txt","r",encoding='utf-8').read()
 
 
 # Read directly from the file
@@ -103,7 +103,7 @@ class Ws_Param(object):
 
 wsParam = Ws_Param(APPID='ga6718ea', APIKey='b7ae17b6e95b1b7cd1e9f0b1c13ecff5',
                        APISecret='0f0dfc033910e25a3d1d53dd18a3f9c7',
-                       AudioFile='turto/audio_data/output.wav', Text=TEXT)
+                       AudioFile='audio_data/output.wav', Text=TEXT)
 
 # Handling of received websocket messages
 def on_message(ws, message):
@@ -123,7 +123,7 @@ def on_message(ws, message):
                 # By default, python uses gbk encoding on windows, you need to do encoding conversion when you print, and other systems such as mac will adjust the encoding by themselves.
 
                 # VIẾT RA FILE XML ĐỂ DÙNG
-                with open("turto/text_data/assessment-point.xml", "w", encoding="utf-8") as file:
+                with open("text_data/assessment-point.xml", "w", encoding="utf-8") as file:
                     file.write(xml.decode("gbk"))
 
 

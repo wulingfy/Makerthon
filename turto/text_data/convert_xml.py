@@ -1,5 +1,6 @@
 import xml.etree.ElementTree as ET
 import json
+import csv
 # Đọc file XML
 tree = ET.parse('text_data/assessment-point.xml')  # Thay 'your_file.xml' bằng đường dẫn tới file XML của bạn
 root = tree.getroot()
@@ -24,15 +25,25 @@ def get_data_pronunciation():
                     }
                     data.append(sentence_data)
     return data
-
-if __name__ == "__main__":
+    
+def append_data():
     result = get_data_pronunciation()
-    for cons in result:
-        print("Content:", cons['content'])
-        print("Accuracy Score:", cons['accuracy_score'])
-        print("Fluency Score:", cons['fluency_score'])
-        print("Standard Score:", cons['standard_score'])
-        print("Total Score:", cons['total_score'])
-        print('\n')
+    headers = ["Content", "Accuracy Score", "Fluency Score", "Standard Score", "Total Score"]
+    with open('text_data/data_pronunciation.csv', mode='a', newline='', encoding='utf-8') as file:
+        file.seek(0, 2)  # Move the file pointer to the end
+        writer = csv.DictWriter(file, fieldnames=headers)
+        # Write the header only if the file is empty
+        # Check if the file is empty by trying to read the first line
     
-    
+        if file.tell() == 0:  # If the file is empty
+            writer.writeheader()
+        # Write the data rows
+        for cons in result:
+            print(cons)
+            writer.writerow({
+                "Content": cons['content'],
+                "Accuracy Score": cons['accuracy_score'],
+                "Fluency Score": cons['fluency_score'],
+                "Standard Score": cons['standard_score'],
+                "Total Score": cons['total_score']
+            })

@@ -3,10 +3,11 @@ import sounddevice as sd
 import soundfile as sf
 import keyboard
 import threading
-from . import speaker
-from . import processing
-from . import tts
-
+from python_externals import speaker
+from python_externals import processing
+from python_externals import tts
+from python_externals import assessment
+from text_data import convert_xml
 fs = 16000
 channels = 1
 # filename = 'audio_data/output.wav'
@@ -51,6 +52,9 @@ def stop_recording() -> str:
     text = speaker.get_text() # get text
     with open("text_data/script.txt", "a") as file:
         file.write(text + '\n')
+    with open("text_data/user_speech.txt", "w") as file:
+        file.write(text + '\n')
+    
     # print("PRESS SPACE TO START/STOP")    
     return text
 
