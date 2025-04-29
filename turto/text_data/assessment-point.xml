@@ -2,135 +2,38 @@
   <xml_result>
       <read_sentence lan="en" type="study" version="7.0.0.1008">
           <rec_paper>
-              <read_chapter accuracy_score="3.343554" beg_pos="0" content="Today we have a festival in school. It&apos;s called Independence Days of Vietnam." end_pos="772" except_info="0" fluency_score="4.157419" integrity_score="5.000000" is_rejected="false" reject_type="0" standard_score="3.211805" total_score="3.750486" word_count="13">
-                  <sentence accuracy_score="4.378803" beg_pos="0" content="today we have a festival in school" end_pos="306" fluency_score="4.872779" index="0" standard_score="4.084618" total_score="4.625791" word_count="7">
-                      <word beg_pos="102" content="today" dp_message="0" end_pos="134" global_index="0" index="0" pitch="  177.27  177.27  175.51  173.61  172.62  172.54  172.46  172.37  172.29  172.21  172.00  171.51  170.93  170.54  170.52  170.81  170.96  170.77  169.79  167.95  165.14  162.34  159.88" pitch_beg="111" pitch_end="134" property="0" total_score="2.119310">
-                          <syll beg_pos="102" content="t ax" end_pos="120" serr_msg="0" syll_accent="0" syll_score="1.854973">
-                              <phone beg_pos="102" content="t" dp_message="0" end_pos="110"></phone>
-                              <phone beg_pos="110" content="ax" dp_message="0" end_pos="120"></phone>
+              <read_chapter accuracy_score="2.183766" beg_pos="0" content="Hello. Nice to meet." end_pos="361" except_info="28680" fluency_score="2.925096" integrity_score="5.000000" is_rejected="false" reject_type="0" standard_score="0.000000" total_score="2.554431" word_count="4">
+                  <sentence accuracy_score="2.630896" beg_pos="0" content="hello" end_pos="128" fluency_score="2.771731" index="0" standard_score="0.000000" total_score="2.701313" word_count="1">
+                      <word beg_pos="58" content="hello" dp_message="0" end_pos="128" global_index="0" index="0" pitch="  176.72  176.72  175.82  174.26  172.24  170.57  169.64  169.74  170.33  171.02  171.36  171.34  171.02  170.44  169.02  167.79  166.65  165.37  163.63  161.45  159.45  158.27  155.47  152.58  148.12  144.74  141.49  138.71  136.09  133.54  130.54  127.70  124.75" pitch_beg="81" pitch_end="114" property="0" total_score="4.717469">
+                          <syll beg_pos="58" content="hh eh" end_pos="88" serr_msg="0" syll_accent="0" syll_score="4.772931">
+                              <phone beg_pos="58" content="hh" dp_message="0" end_pos="80"></phone>
+                              <phone beg_pos="80" content="eh" dp_message="0" end_pos="88"></phone>
                           </syll>
-                          <syll beg_pos="120" content="d ey" end_pos="134" serr_msg="0" syll_accent="1" syll_score="2.383648">
-                              <phone beg_pos="120" content="d" dp_message="0" end_pos="123"></phone>
-                              <phone beg_pos="123" content="ey" dp_message="0" end_pos="134"></phone>
-                          </syll>
-                      </word>
-                      <word beg_pos="134" content="we" dp_message="0" end_pos="148" global_index="1" index="1" pitch="  156.72  156.72  155.94  154.76  154.70  153.07  152.29  150.71  151.17  150.86  149.90  149.50  149.85  150.72" pitch_beg="134" pitch_end="148" property="0" total_score="4.801468">
-                          <syll beg_pos="134" content="w iy" end_pos="148" serr_msg="0" syll_accent="0" syll_score="4.801468">
-                              <phone beg_pos="134" content="w" dp_message="0" end_pos="143"></phone>
-                              <phone beg_pos="143" content="iy" dp_message="0" end_pos="148"></phone>
-                          </syll>
-                      </word>
-                      <word beg_pos="148" content="have" dp_message="0" end_pos="172" global_index="2" index="2" pitch="  146.21  146.21  145.11  145.62  146.75  148.13  150.27  153.01  154.90  154.63  152.43  149.99  147.82  146.31  145.54  145.32  145.84  146.59  146.37  142.69  137.30  132.43  131.87  134.18" pitch_beg="148" pitch_end="172" property="0" total_score="4.668188">
-                          <syll beg_pos="148" content="hh ae v" end_pos="172" serr_msg="0" syll_accent="0" syll_score="4.668188">
-                              <phone beg_pos="148" content="hh" dp_message="0" end_pos="158"></phone>
-                              <phone beg_pos="158" content="ae" dp_message="0" end_pos="168"></phone>
-                              <phone beg_pos="168" content="v" dp_message="0" end_pos="172"></phone>
-                          </syll>
-                      </word>
-                      <word beg_pos="172" content="a" dp_message="0" end_pos="180" global_index="3" index="3" pitch="  140.27  140.27  140.35  139.69  138.14  136.53  134.87  133.72" pitch_beg="172" pitch_end="180" property="0" total_score="4.497838">
-                          <syll beg_pos="172" content="ax" end_pos="180" serr_msg="0" syll_accent="0" syll_score="4.497838">
-                              <phone beg_pos="172" content="ax" dp_message="0" end_pos="180"></phone>
-                          </syll>
-                      </word>
-                      <word beg_pos="180" content="festival" dp_message="0" end_pos="248" global_index="4" index="4" pitch="  138.52  138.52  139.01  141.55  143.74  141.50  137.89  135.58  138.25  140.91  143.58  146.24  148.91  151.57  153.20  153.44  152.41  151.56  151.71  153.80  156.43  158.14  158.72  159.17  160.50  161.85  163.20  164.56  165.91  167.27  168.62  169.98  171.33  172.68  174.04  175.39  176.75  178.10  179.46  179.90  178.83  175.49  171.26  166.72  164.18  164.20  167.28  172.10  176.66  180.11  181.88  182.86  183.36  183.69  183.91  184.13  184.14  183.96  183.55  182.92  181.94  180.33  177.35  172.84  167.10" pitch_beg="180" pitch_end="245" property="0" total_score="4.431056">
-                          <syll beg_pos="180" content="f eh s" end_pos="214" serr_msg="0" syll_accent="1" syll_score="3.935528">
-                              <phone beg_pos="180" content="f" dp_message="0" end_pos="196"></phone>
-                              <phone beg_pos="196" content="eh" dp_message="0" end_pos="204"></phone>
-                              <phone beg_pos="204" content="s" dp_message="0" end_pos="214"></phone>
-                          </syll>
-                          <syll beg_pos="214" content="t ax" end_pos="224" serr_msg="0" syll_accent="0" syll_score="4.855752">
-                              <phone beg_pos="214" content="t" dp_message="0" end_pos="220"></phone>
-                              <phone beg_pos="220" content="ax" dp_message="0" end_pos="224"></phone>
-                          </syll>
-                          <syll beg_pos="224" content="v ax l" end_pos="248" serr_msg="0" syll_accent="0" syll_score="4.643454">
-                              <phone beg_pos="224" content="v" dp_message="0" end_pos="228"></phone>
-                              <phone beg_pos="228" content="ax" dp_message="0" end_pos="232"></phone>
-                              <phone beg_pos="232" content="l" dp_message="0" end_pos="248"></phone>
-                          </syll>
-                      </word>
-                      <word beg_pos="248" content="in" dp_message="0" end_pos="264" global_index="5" index="5" pitch="  147.85  147.85  146.96  145.36  143.59  142.52  141.94  141.80  141.43  141.08  140.49  140.21  140.05" pitch_beg="251" pitch_end="264" property="0" total_score="4.729433">
-                          <syll beg_pos="248" content="ih n" end_pos="264" serr_msg="0" syll_accent="0" syll_score="4.729433">
-                              <phone beg_pos="248" content="ih" dp_message="0" end_pos="254"></phone>
-                              <phone beg_pos="254" content="n" dp_message="0" end_pos="264"></phone>
-                          </syll>
-                      </word>
-                      <word beg_pos="264" content="school" dp_message="0" end_pos="306" global_index="6" index="6" pitch="  168.33  168.33  168.74  169.00  169.40  169.53  169.25  168.17  166.50  164.22  161.30  157.73  154.34  149.22  144.48  140.03  137.06  132.64  126.27" pitch_beg="285" pitch_end="304" property="0" total_score="4.768875">
-                          <syll beg_pos="264" content="s g uw l" end_pos="306" serr_msg="0" syll_accent="0" syll_score="4.768875">
-                              <phone beg_pos="264" content="s" dp_message="0" end_pos="276"></phone>
-                              <phone beg_pos="276" content="g" dp_message="0" end_pos="285"></phone>
-                              <phone beg_pos="285" content="uw" dp_message="0" end_pos="294"></phone>
-                              <phone beg_pos="294" content="l" dp_message="0" end_pos="306"></phone>
+                          <syll beg_pos="88" content="l ow" end_pos="128" serr_msg="0" syll_accent="1" syll_score="4.662006">
+                              <phone beg_pos="88" content="l" dp_message="0" end_pos="106"></phone>
+                              <phone beg_pos="106" content="ow" dp_message="0" end_pos="128"></phone>
                           </syll>
                       </word>
                   </sentence>
-                  <sentence accuracy_score="2.135762" beg_pos="306" content="it&apos;s called independence days of vietnam" end_pos="772" fluency_score="3.322834" index="1" standard_score="2.193522" total_score="2.729298" word_count="6">
-                      <word beg_pos="309" content="it&apos;s" dp_message="0" end_pos="342" global_index="7" index="0" pitch="  129.85  129.85  133.76  136.83  139.20  139.92  137.97  134.19  132.73  134.47" pitch_beg="315" pitch_end="325" property="0" total_score="3.656082">
-                          <syll beg_pos="309" content="ih t" end_pos="315" serr_msg="1" syll_accent="0" syll_score="2.588924">
-                              <phone beg_pos="309" content="ih" dp_message="0" end_pos="312"></phone>
-                              <phone beg_pos="312" content="t" dp_message="0" end_pos="315"></phone>
-                          </syll>
-                          <syll beg_pos="315" content="ih z" end_pos="342" serr_msg="0" syll_accent="0" syll_score="4.723239">
-                              <phone beg_pos="315" content="ih" dp_message="0" end_pos="322"></phone>
-                              <phone beg_pos="322" content="z" dp_message="0" end_pos="342"></phone>
+                  <sentence accuracy_score="2.034723" beg_pos="128" content="nice to meet" end_pos="361" fluency_score="2.976218" index="1" standard_score="0.000000" total_score="2.505470" word_count="3">
+                      <word beg_pos="164" content="nice" dp_message="0" end_pos="214" global_index="1" index="0" pitch="  175.10  175.10  175.39  176.03  176.20  176.01  175.83  175.64  175.45  175.26  175.07  174.89  174.70  174.51  174.32  174.13  173.95  173.76  173.57  173.38  173.20  173.01  172.82  172.63  172.97  174.47  176.68  178.56  179.44  179.75  180.26  181.00  182.49  184.76  185.23  183.43" pitch_beg="167" pitch_end="203" property="0" total_score="4.360181">
+                          <syll beg_pos="164" content="n ay s" end_pos="214" serr_msg="0" syll_accent="0" syll_score="4.360181">
+                              <phone beg_pos="164" content="n" dp_message="0" end_pos="194"></phone>
+                              <phone beg_pos="194" content="ay" dp_message="0" end_pos="204"></phone>
+                              <phone beg_pos="204" content="s" dp_message="0" end_pos="214"></phone>
                           </syll>
                       </word>
-                      <word beg_pos="342" content="sil" end_pos="345"></word>
-                      <word beg_pos="345" content="called" dp_message="0" end_pos="406" global_index="8" index="1" pitch="  138.56  138.56  135.48  132.95  131.48  130.27  129.91  130.55  131.92  133.02  133.73  133.80  133.55  132.67  131.25  129.28  127.36  125.56  124.62  124.07  124.11  124.38  124.98  126.33  127.70  128.92  129.51  129.99  130.62  130.61  130.00  130.04  129.40  128.07" pitch_beg="358" pitch_end="392" property="0" total_score="2.871931">
-                          <syll beg_pos="345" content="k ao l d" end_pos="406" serr_msg="1" syll_accent="0" syll_score="2.871931">
-                              <phone beg_pos="345" content="k" dp_message="0" end_pos="358"></phone>
-                              <phone beg_pos="358" content="ao" dp_message="0" end_pos="382"></phone>
-                              <phone beg_pos="382" content="l" dp_message="0" end_pos="406"></phone>
-                              <phone beg_pos="406" content="d" dp_message="0" end_pos="406"></phone>
+                      <word beg_pos="214" content="to" dp_message="0" end_pos="220" global_index="2" index="1" pitch="  175.22  175.22  176.42  176.09  171.14  162.83" pitch_beg="214" pitch_end="220" property="0" total_score="3.457404">
+                          <syll beg_pos="214" content="t uw" end_pos="220" serr_msg="1" syll_accent="0" syll_score="3.457404">
+                              <phone beg_pos="214" content="t" dp_message="0" end_pos="217"></phone>
+                              <phone beg_pos="217" content="uw" dp_message="0" end_pos="220"></phone>
                           </syll>
                       </word>
-                      <word beg_pos="406" content="sil" end_pos="419"></word>
-                      <word beg_pos="419" content="sil" end_pos="457"></word>
-                      <word beg_pos="457" content="independence" dp_message="0" end_pos="544" global_index="9" index="2" pitch="  165.93  165.93  167.80  168.74  170.96  173.61  177.38  179.77  182.12  183.89  185.34  186.08  186.01  185.09  182.71  179.03  178.03  178.82  178.63  171.90  161.20  152.85  148.42  147.18  145.45  143.71  141.98  140.25  138.51  138.38  142.38  148.14  153.69  154.73  153.69  151.09  148.67  146.83  145.65  145.39  145.68  146.65  147.92  149.14  149.52  148.79  146.61  142.04  138.07  135.07  135.02  135.38  136.37  137.37  138.36  139.36  140.36  141.35  142.35  143.34  144.10  144.57  144.88  144.93  145.10  145.40  146.29  147.46  148.40  148.64  148.37  148.52  149.46  150.61  151.47  151.80  151.96  151.91" pitch_beg="466" pitch_end="544" property="0" total_score="3.744646">
-                          <syll beg_pos="457" content="ih n" end_pos="480" serr_msg="0" syll_accent="0" syll_score="4.899458">
-                              <phone beg_pos="457" content="ih" dp_message="0" end_pos="470"></phone>
-                              <phone beg_pos="470" content="n" dp_message="0" end_pos="480"></phone>
-                          </syll>
-                          <syll beg_pos="480" content="d ih" end_pos="488" serr_msg="0" syll_accent="0" syll_score="3.790376">
-                              <phone beg_pos="480" content="d" dp_message="0" end_pos="484"></phone>
-                              <phone beg_pos="484" content="ih" dp_message="0" end_pos="488"></phone>
-                          </syll>
-                          <syll beg_pos="488" content="p eh n" end_pos="507" serr_msg="0" syll_accent="1" syll_score="4.158005">
-                              <phone beg_pos="488" content="p" dp_message="0" end_pos="500"></phone>
-                              <phone beg_pos="500" content="eh" dp_message="0" end_pos="504"></phone>
-                              <phone beg_pos="504" content="n" dp_message="0" end_pos="507"></phone>
-                          </syll>
-                          <syll beg_pos="507" content="d n s" end_pos="544" serr_msg="0" syll_accent="0" syll_score="2.530925">
-                              <phone beg_pos="507" content="d" dp_message="0" end_pos="510"></phone>
-                              <phone beg_pos="510" content="n" dp_message="0" end_pos="514"></phone>
-                              <phone beg_pos="514" content="s" dp_message="0" end_pos="544"></phone>
-                          </syll>
-                      </word>
-                      <word beg_pos="544" content="sil" end_pos="547"></word>
-                      <word beg_pos="547" content="days" dp_message="0" end_pos="593" global_index="10" index="3" pitch="  143.74  143.74  146.19  147.18  146.46  145.18  143.73  142.34  140.92  139.70  138.65  137.92  137.59  137.31  137.12  136.92  137.13  137.55  138.58  139.87  140.90  140.02  137.74  135.26  133.43  132.38  133.02  135.73" pitch_beg="547" pitch_end="575" property="0" total_score="3.443588">
-                          <syll beg_pos="547" content="d ey z" end_pos="593" serr_msg="0" syll_accent="0" syll_score="3.443588">
-                              <phone beg_pos="547" content="d" dp_message="0" end_pos="552"></phone>
-                              <phone beg_pos="552" content="ey" dp_message="0" end_pos="570"></phone>
-                              <phone beg_pos="570" content="z" dp_message="0" end_pos="593"></phone>
-                          </syll>
-                      </word>
-                      <word beg_pos="593" content="sil" end_pos="596"></word>
-                      <word beg_pos="596" content="of" dp_message="0" end_pos="623" global_index="11" index="4" pitch="  147.32  147.32  152.35  152.25  152.35  151.65  150.42  149.22  147.59  144.23  139.52  135.19  132.68  130.42  127.34" pitch_beg="607" pitch_end="622" property="0" total_score="2.545041">
-                          <syll beg_pos="596" content="ax v" end_pos="623" serr_msg="0" syll_accent="0" syll_score="2.545041">
-                              <phone beg_pos="596" content="ax" dp_message="0" end_pos="616"></phone>
-                              <phone beg_pos="616" content="v" dp_message="0" end_pos="623"></phone>
-                          </syll>
-                      </word>
-                      <word beg_pos="623" content="vietnam" dp_message="0" end_pos="690" global_index="12" index="5" pitch="  127.06  127.06  127.79  130.63  133.82  135.21  135.69  134.76  132.93  131.01  128.64  126.72  125.37  124.76  124.50  123.80  123.36  122.69  122.24  121.76  121.10  120.19  119.03  117.96  116.82  115.77  114.67  113.62  112.93  112.38  111.62  110.53  109.15  107.42  105.45  103.70  102.46  101.62  100.82  100.33  100.42  101.23  102.04  102.77  103.49  103.41  102.95  102.18  102.26  104.07  105.96  105.94  103.37  103.87  104.49  104.25" pitch_beg="625" pitch_end="681" property="0" total_score="2.218850">
-                          <syll beg_pos="623" content="v y eh t" end_pos="641" serr_msg="1" syll_accent="2" syll_score="1.850398">
-                              <phone beg_pos="623" content="v" dp_message="0" end_pos="628"></phone>
-                              <phone beg_pos="628" content="y" dp_message="0" end_pos="634"></phone>
-                              <phone beg_pos="634" content="eh" dp_message="0" end_pos="638"></phone>
-                              <phone beg_pos="638" content="t" dp_message="0" end_pos="641"></phone>
-                          </syll>
-                          <syll beg_pos="641" content="n ae m" end_pos="690" serr_msg="0" syll_accent="1" syll_score="2.710120">
-                              <phone beg_pos="641" content="n" dp_message="0" end_pos="648"></phone>
-                              <phone beg_pos="648" content="ae" dp_message="0" end_pos="664"></phone>
-                              <phone beg_pos="664" content="m" dp_message="0" end_pos="690"></phone>
+                      <word beg_pos="220" content="meet" dp_message="0" end_pos="239" global_index="3" index="2" pitch="  164.38  164.38  158.95  153.42  150.37  152.71  155.56  156.06  156.85  157.64  158.18  158.10  150.77  143.85  137.55" pitch_beg="220" pitch_end="235" property="0" total_score="3.064131">
+                          <syll beg_pos="220" content="m iy t" end_pos="239" serr_msg="1" syll_accent="0" syll_score="3.064131">
+                              <phone beg_pos="220" content="m" dp_message="0" end_pos="226"></phone>
+                              <phone beg_pos="226" content="iy" dp_message="0" end_pos="234"></phone>
+                              <phone beg_pos="234" content="t" dp_message="0" end_pos="239"></phone>
                           </syll>
                       </word>
                   </sentence>

@@ -37,6 +37,7 @@ const sendTextToSpeech = async (text) => {
 }
 
 const recordBtn = document.getElementById('recordButton');
+const submitBtn = document.getElementById('submitButton');
 const container = document.getElementById('messageContainer');
 const loader = document.getElementById('loader');
 const typedText = document.getElementById('typedText');
@@ -111,6 +112,8 @@ const startRecording = async () => {
     if (data.status === 'success') {
         isRecording = true;
         // recordButton.textContent = "Stop Recording";
+        submitBtn.disabled = true;
+        submitBtn.classList.add('processing');
     } else {
         alert("Error starting recording");
     }
@@ -142,8 +145,7 @@ const stopRecording = async () => {
         container.appendChild(newDiv);
 
         // Re-enable Button and Screen
-        recordBtn.disabled = false;
-        recordBtn.classList.remove('processing');
+        
         container.classList.remove('blurred');
         loader.classList.add('hidden');
         stopTypingAnimation();
@@ -159,6 +161,12 @@ const stopRecording = async () => {
             newDiv.textContent = respond;
             container.appendChild(newDiv);
             sendTextToSpeech(respond);
+
+            // Re-enable Buttons
+            recordBtn.disabled = false;
+            recordBtn.classList.remove('processing');
+            submitBtn.disabled = false;
+            submitBtn.classList.remove('processing');
         } else {
             showError('Failed to record your message. Try again.');
         }

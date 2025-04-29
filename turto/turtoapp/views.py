@@ -15,11 +15,14 @@ import json
 
 SCRIPT_FILE_PATH = os.path.join(settings.BASE_DIR, 'text_data', 'script.txt')
 REPLY_FILE_PATH = os.path.join(settings.BASE_DIR, 'text_data', 'reply.txt')
+DATA_FILE_PATH = os.path.join(settings.BASE_DIR, 'text_data', 'data_pronunciation.csv')
 
 def home(request):
     try:
         # Open the file in write mode to clear its contents
         with open(SCRIPT_FILE_PATH, 'w') as file:
+            file.truncate(0)  # This clears the file content
+        with open(DATA_FILE_PATH, 'w') as file:
             file.truncate(0)  # This clears the file content
 
         # Now render your page

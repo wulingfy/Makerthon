@@ -10,7 +10,6 @@ system_instruction = """
        Example: She don't like coffee but she drink it every morning
        Please format this with MARKDOWN
        Please format this with MARKDOWN
-       if multi sentence should be endline
        No NEED 
        use right arrow as &rarr;
        format output like under:

@@ -45,9 +45,9 @@ CATEGORY = "read_sentence"
 # Text to be reviewed utf8 encoded, need to add utf8bom header
 TEXT = '\uFEFF'+ open("text_data/user_speech.txt","r",encoding='utf-8').read()
 
-
 # Read directly from the file
 # TEXT = '\uFEFF'+ open("cn/read_sentence_cn.txt","r",encoding='utf-8').read()
+
 
 class Ws_Param(object):
     # Initialization
@@ -183,6 +183,7 @@ def on_open(ws):
     thread.start_new_thread(run, ())
 
 def assess():
+    print(TEXT)
     time1 = datetime.now()
     # APPID, APISecret, APIKey information can be obtained in the console - Voice Evaluation (Streaming Version) - Service Interface Authentication Information.
     
@@ -195,4 +196,5 @@ def assess():
     print(time2 - time1)
 
 if __name__ == "__main__":
-    assess()
+    print("1")
+    # assess()

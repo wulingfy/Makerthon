@@ -108,6 +108,7 @@ button:focus {
 .submit {
     font-family: 'Montserrat Black', sans-serif;
     background: linear-gradient(45deg, #299E6D, #A8D961);
+    filter: brightness(1);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     color: white;
     width: 100%;
@@ -125,6 +126,7 @@ button:focus {
 
 .record {
     background: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
+    filter: brightness(1);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     width: 100%;
     padding: 5px;
@@ -139,8 +141,8 @@ button:focus {
     cursor: pointer;
 }
 
-#recordButton.processing {
-    background: linear-gradient(45deg, #1b1b29, #2d2d42);
+.processing {
+    filter: brightness(0.5);
     cursor: not-allowed; /* show disabled cursor */
 }
 
