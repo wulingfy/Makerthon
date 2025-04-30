@@ -1,7 +1,6 @@
 import google.generativeai as genai
 import json
-from python_externals import assessment
-from text_data import convert_xml
+
 genai.configure(api_key="AIzaSyCspRK5LmIW-Ps-6nE-dt5FxwGY60AQ1rE")
 # Gemini - 1.5 - flash
 model = genai.GenerativeModel("gemini-1.5-flash")  

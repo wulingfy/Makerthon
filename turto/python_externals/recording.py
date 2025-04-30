@@ -6,8 +6,7 @@ import threading
 from python_externals import speaker
 from python_externals import processing
 from python_externals import tts
-from python_externals import assessment
-from text_data import convert_xml
+
 fs = 16000
 channels = 1
 # filename = 'audio_data/output.wav'

@@ -35,7 +35,6 @@ def home(request):
 
 def judge(request):
     grammar_judge.check_script()
-    # assessment.assess()
     # pronun = convert_xml.get_data_pronunciation()
 
     #Define the file path
