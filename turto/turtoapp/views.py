@@ -7,7 +7,6 @@ from python_externals import assessment
 from python_externals import processing
 from python_externals import tts
 from python_externals import grammar_judge
-from text_data import convert_xml
 from django.views.decorators.csrf import csrf_exempt
 import json
 
