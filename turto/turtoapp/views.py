@@ -33,22 +33,8 @@ def home(request):
         return render(request, 'error_page.html')  # Render an error page or some fallback
 
 def judge(request):
-    grammar_judge.check_script()
-    # pronun = convert_xml.get_data_pronunciation()
-
-    #Define the file path
-    file_path = os.path.join('text_data', 'reply.txt')
-    
-    #Read the content of the text file
-    try:
-        with open(file_path, 'r') as file:
-            file_content = file.read()
-    except FileNotFoundError:
-        file_content = "File not found."
-
-    # Pass the content to the template
-    # return render(request, 'judge.html', {'file_content': file_content, 'pronun': pronun})
-    return render(request, 'judge.html', {'file_content': file_content})
+    data = grammar_judge.check_script()
+    return render(request, 'judge.html', {'data': data})
 
 @csrf_exempt
 def start_recording_view(request):

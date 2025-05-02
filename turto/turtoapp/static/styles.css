@@ -243,46 +243,7 @@ button:focus {
 .judge-title {
     color: white;
     text-align: center;
-}
-
-.split {
-    display: flex;
-    height: calc(100vh - 56px);
-}
-
-.section {
-    flex: 1;
-    padding: 40px;
-    box-sizing: border-box;
-    overflow-y: auto;
-    margin: 10px;
-    border-radius: 35px;
-}
-
-.grammar-section {
-    color: white;
-    background-color: var(--dark-color);
-}
-
-.grammar-content {
-    text-wrap: wrap;
-    color: white;
-}
-
-.pronun-section {
-    color: white;
-    background-color: var(--dark-color);
-}
-
-.pronun-content {
-    text-wrap: wrap;
-    color: white;
-}
-
-@media (max-width: 768px) {
-    .split {
-        flex-direction: column;
-    }
+    margin-top: 16px;
 }
 
 /* Hide the loader initially */
@@ -358,6 +319,7 @@ button:focus {
     width: 80%;
     max-width: 500px;
     text-align: center;
+    z-index: 1;
     border-radius: 16px; /* Optional: Adds rounded corners to the modal */
 }
 
@@ -377,4 +339,77 @@ button:focus {
     transform: translateY(-2px);
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
     cursor: pointer;
+}
+
+.charts {
+  display: flex;
+  place-content: center;
+  flex-flow: wrap;
+  gap: 10rem;
+  margin-top: 38px;
+}
+
+.chart-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pie {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: none; /* Don't set default background, handled by JS */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: white;
+  transition: background 0.5s ease-out;
+}
+
+.percentage {
+  position: absolute;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-size: 70px;
+  text-align: center;
+  line-height: 1;
+  text-shadow: 2px 2px #000;
+  z-index: 0.92;
+}
+
+.chart-label {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 1.5rem;
+  color: #ffffff;
+  margin-top: 6px;
+  text-align: center;
+}
+
+.header {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 900;
+  margin-left: 28px;
+  font-size: 36px;
+}
+
+.rep-box {
+  background-color: var(--extra-dark-color);
+  width: 95%;
+  margin-left: 40px;
+  padding: 20px;
+  border-radius: 20px;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.info-icon {
+  width: 32px;
+  position: fixed;
+  top: 80px;
+  right: 25px;
 }

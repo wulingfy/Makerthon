@@ -216,3 +216,28 @@ function runRecord() {
         startRecording();
     }
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".chart-item").forEach(item => {
+    const pie = item.querySelector(".pie");
+    const percent = parseInt(item.getAttribute("data-percent")) || 0;
+
+    // Initialize the percentage text
+    const percentageText = pie.querySelector(".percentage");
+    percentageText.textContent = percent;
+    console.log(percentageText);
+
+    // Animate the pie chart filling
+    let current = 0;
+    const interval = setInterval(() => {
+      if (current > percent) {
+        clearInterval(interval); // Stop the animation when it reaches the target
+      } else {
+        const deg = (current / 100) * 360;
+        pie.style.background = `conic-gradient(#5ce85c 0deg ${deg}deg, #383855 ${deg}deg 360deg)`;
+        percentageText.textContent = current; // Update the displayed percentage value
+        current++;
+      }
+    }, 10); // Adjust the speed of the animation
+  });
+});
