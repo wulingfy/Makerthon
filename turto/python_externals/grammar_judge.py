@@ -8,13 +8,12 @@ model = genai.GenerativeModel("gemini-1.5-flash")
 system_instruction = """
       [You're a professional and supportive English teacher. Please correct any grammar mistakes in my spoken English sentences. Keep the tone casual and conversational, and explain why something is wrong in a simple way. Then, show me a more natural way to say it, like how a native speaker would say it. Here's my first sentence1
        Example: She don't like coffee but she drink it every morning
-       use right arrow as &rarr;
        using endline
        format output like under:]
 
-       She don't like coffee" &rarr; "She doesn't like coffee
+       She don't like coffee: She doesn't like coffee
 
-       she drink it" &rarr;  "she drinks it"
+       she drink it: she drinks it
 
        In the present simple tense, we use "doesn't" with "she/he/it", and we add -s to the verb: "drinks".
 
@@ -26,7 +25,7 @@ system_instruction = """
 """
 
 score_accuracy = """
-You are an English-speaking examiner specializing in grammar accuracy.
+You are an IELTS English-speaking examiner specializing in grammar accuracy.
 Your task is to evaluate the following speaking script and give a Grammar Accuracy score from 0 to 100.
 Criteria:
        Focus only on grammatical correctness (ignore vocabulary, pronunciation, fluency, or content).
@@ -43,24 +42,26 @@ Script to evaluate:
 """
 
 score_range = """
-You are an English-speaking examiner specializing in grammar evaluation.
+You are an IELTS Speaking examiner specializing in grammar evaluation.
 Your task is to assess the Grammar Range of the following speaking script and give a score from 0 to 100.
 
 Criteria:
+       Score the conversation based on the lexical resources user used (like IELTS).
+       Low scores will be given if the answers are too short.
+       
        Focus only on the variety and complexity of grammatical structures used (ignore accuracy, vocabulary, fluency, or pronunciation).
-
+       The word should be in the hard level ex: supercalifragilisticexpialidocious, or Specialized vocabulary
+      
        A wide range of sentence types (simple, compound, complex), verb forms, clauses, conditionals, modals, passive voice, etc., should receive a higher score.
-
+   
        Repeated use of simple structures will lower the score.
-
-       A perfect script with advanced and diverse grammar earns 100.
 
 Output format: only number (score out of 100)
 Script to evaluate:
 """
 
 score_control = """
-       You are an English-speaking examiner specializing in grammar evaluation.
+       You are an IELTS English-speaking examiner specializing in grammar evaluation.
        Your task is to assess the Grammar Control of the following speaking script and give a score from 0 to 100.
 
               Definition: Grammar Control means the speaker’s ability to consistently use correct grammar, and when errors occur, they self-correct or maintain overall control of meaning.
@@ -149,22 +150,22 @@ def check_script():
        if not user_message:
               return data
        # Grammar
-       #reply = chat.send_message(user_message)
+       reply = chat.send_message(user_message)
        mess = score_accuracy + user_message
-       data["accuracy"] = 100 #chat.send_message(mess).text
+       data["accuracy"] = chat.send_message(mess).text
        mess = score_range + user_message
-       data["range"] =  45 #chat.send_message(mess).text
+       data["range"] =  chat.send_message(mess).text
        mess = score_control + user_message
-       data["control"] =  25 #chat.send_message(mess).text
-       data["fix"] = 'asap' #reply.text
+       data["control"] =  chat.send_message(mess).text
+       data["fix"] = reply.text
 
        # Mental Health
        mess = score_mood_expression + user_message
-       data["mood_expression"] =  100 #chat.send_message(mess).text
+       data["mood_expression"] =  chat.send_message(mess).text
        mess = score_thinking + user_message
-       data["thinking"] = 70 #chat.send_message(mess).text
+       data["thinking"] = chat.send_message(mess).text
        mess = give_advice + user_message
-       data["advice"] = "Skibidi toilet" #chat.send_message(mess).text
+       data["advice"] = chat.send_message(mess).text
        return data
 
 
