@@ -21,17 +21,17 @@
 
 `pip install sounddevice soundfile keyboard` --> SOUND ĐỂ THU ÂM, KEYBOARD ĐỂ DÙNG PHÍM
 
-`pip install six` --> ĐÉO BIẾT ĐỂ LÀM GÌ NHƯNG MÀ CỨ CÀI ĐỂ CHẠY ASSESSMENT.PY
+`pip install six` -->
 
-`pip install cffi` --> ĐÉO BIẾT ĐỂ LÀM GÌ NHƯNG MÀ CỨ CÀI ĐỂ CHẠY ASSESSMENT.PY
+`pip install cffi` --> 
 
-`pip install gevent` --> ĐÉO BIẾT ĐỂ LÀM GÌ NHƯNG MÀ CỨ CÀI ĐỂ CHẠY ASSESSMENT.PY
+`pip install gevent` --> 
 
-`pip install pycparser==2.19` --> ĐÉO BIẾT ĐỂ LÀM GÌ NHƯNG MÀ CỨ CÀI ĐỂ CHẠY ASSESSMENT.PY
+`pip install pycparser==2.19` --> 
 
-`pip install websocket` --> ĐÉO BIẾT ĐỂ LÀM GÌ NHƯNG MÀ CỨ CÀI ĐỂ CHẠY ASSESSMENT.PY
+`pip install websocket` --> 
 
-`pip install websocket-client` --> ĐÉO BIẾT ĐỂ LÀM GÌ NHƯNG MÀ CỨ CÀI ĐỂ CHẠY ASSESSMENT.PY
+`pip install websocket-client` --> 
 
-`pip install scipy` --> QUÊN MẸ DÙNG ĐỂ LÀM GÌ
+`pip install scipy` --> 
 
