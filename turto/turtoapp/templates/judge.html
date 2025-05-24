@@ -61,20 +61,13 @@
     {{ data.fix }}
   </div>
 
-  <div role="figure" class="charts">
-    <div class="chart-item-2" data-percent="{{ data.mood_expression }}">
-      <div class="pie"><span class="percentage">{{ data.mood_expression }}</span></div>
-      <div class="chart-label">Emotional<br>State</div>
-    </div>
-    <div class="chart-item-2" data-percent="{{ data.thinking }}">
-      <div class="pie"><span class="percentage">{{ data.thinking }}</span></div>
-      <div class="chart-label">Negativity</div>
-    </div>
+  <div class="header">Mental Health Quiz</div>
+  <div style="margin: 15px;">
+    <p>Click here to take a personalized quiz for your mental health!</p>
   </div>
 
-  <div class="header">Advice</div>
-  <div class="rep-box">
-    {{ data.advice }}
+  <div class="quiz-btn-div">
+    <button id="quizButton" onclick="window.location.href='{% url 'mental_quiz' %}'" class="quiz-btn">Take me to there!</button>
   </div>
 </div>
 

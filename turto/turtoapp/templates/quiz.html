@@ -1,0 +1,132 @@
+{% extends "navbar.html" %} {% block title %} Quiz {% endblock %} 
+{% load static %}
+
+{% block content %} 
+
+  <div class="scrollable-list" style="font-size: 18px;">
+    <div style="width: 100vw;">
+      <div class="criteria">
+        The rating scale is as follows:<br>
+        0 - Did not apply to me at all<br>
+        1 - Applied to me to some degree, or some of the time<br>
+        2 - Applied to me to a considerable degree or a good part of time<br>
+        3 - Applied to me very much or most of the time<br>
+      </div>
+    </div>
+
+    <form id="sliderForm" method="post">
+      {% csrf_token %}
+      {% for i in data %}
+        <div class="questionaire">
+          <label>{{ forloop.counter }}. {{ i.0 }}</label><br>
+          <input id="flexibleSlider" type="range" name="response_{{ forloop.counter }}" min="0" max="3" step="0.01" value="0" style="width: 100%;" class="flexible-slider" />
+          <div style="display: flex; justify-content: space-between; color: white; font-size: 0.8em; margin-top: 4px;">
+            <span>0</span>
+            <span>1</span>
+            <span>2</span>
+            <span>3</span>
+          </div>
+        </div>
+      {% endfor %}
+      <div class="btn-div">
+        <button type="submit" id="submitButton" class="quiz-btn">Submit</button>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    console.log("Slider script loaded!");
+    document.querySelectorAll('.flexible-slider').forEach(slider => {
+      const valueBox = slider.parentElement.querySelector('.slider-value-box');
+
+      slider.addEventListener('input', () => {
+        //updateValueBox();
+      });
+
+      slider.addEventListener('change', (event) => {
+        let val = parseFloat(event.target.value);
+        let fixedVal = Math.round(val);
+        // Smoothly animate slider to fixed value
+        let currentVal = val;
+        let step = (fixedVal - currentVal) / 10;
+        let count = 0;
+        let interval = setInterval(() => {
+          currentVal += step;
+          event.target.value = currentVal.toFixed(2);
+          //updateValueBox();
+          count++;
+          if (count >= 10) {
+            event.target.value = fixedVal;
+            //updateValueBox();
+            clearInterval(interval);
+          }
+        }, 20);
+      });
+
+      // Initialize value box position and value
+      //updateValueBox();
+    });
+
+    document.getElementById('sliderForm').addEventListener('submit', function (e) {
+      e.preventDefault(); // Stop the form from submitting normally
+      console.log("Form submission triggered");
+    
+      const sliders = document.querySelectorAll('.flexible-slider');
+      const values = Array.from(sliders).map(slider => parseInt(slider.value));
+
+      console.log("Submitting values:", values);  // Log here
+    
+      fetch('/submit-sliders/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-CSRFToken': getCSRFToken(), // Django needs this!
+        },
+        body: JSON.stringify({ values: values })
+      })
+      .then(res => res.json())
+      .then(data => {
+        console.log('Response from Django:', data);
+        if (data.redirect_url) {
+          console.log('Redirecting to:', data.redirect_url);
+          window.location.href = data.redirect_url;
+        } else {
+          console.error("Unexpected response:", data);
+        }
+    
+        // Optional: show response on page
+        // document.getElementById("output").textContent = data.labels.join(", ");
+      })
+      .catch(err => console.error('Error submitting form:', err));
+    });
+    
+    // CSRF token helper (required by Django)
+    function getCSRFToken() {
+      const cookieValue = document.cookie
+        .split('; ')
+        .find(row => row.startsWith('csrftoken='));
+      return cookieValue ? cookieValue.split('=')[1] : '';
+    }
+
+
+    {% comment %} fetch('/submit-sliders/', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-CSRFToken': getCSRFToken(),  // make sure this returns a valid token
+      },
+      body: JSON.stringify({ values: values })
+    })
+    .then(res => {
+      if (!res.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return res.json();
+    })
+    .then(data => {
+      console.log('Response from Django:', data);
+    })
+    .catch(err => console.error('Error submitting form:', err)); {% endcomment %}
+  </script>
+
+{% endblock %}

@@ -217,6 +217,18 @@ function runRecord() {
     }
 }
 
+function getCSRFToken() {
+  const name = 'csrftoken';
+  const cookies = document.cookie.split(';');
+  for (let cookie of cookies) {
+    const trimmed = cookie.trim();
+    if (trimmed.startsWith(name + '=')) {
+      return decodeURIComponent(trimmed.slice(name.length + 1));
+    }
+  }
+  return '';
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll(".chart-item").forEach(item => {
     const pie = item.querySelector(".pie");

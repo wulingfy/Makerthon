@@ -3,11 +3,12 @@ from django.conf import settings
 from django.shortcuts import render, HttpResponse
 from django.http import JsonResponse
 from python_externals import recording
-from python_externals import assessment
+# from python_externals import assessment
 from python_externals import processing
 from python_externals import tts
 from python_externals import grammar_judge
 from django.views.decorators.csrf import csrf_exempt
+from django.shortcuts import redirect
 import json
 
 # Create your views here.
@@ -43,6 +44,10 @@ def start_recording_view(request):
         return JsonResponse({'status': 'success'})
     except Exception as e:
         return JsonResponse({'status': 'error', 'message': str(e)})
+    
+def mental_quiz_view(request):
+    data = grammar_judge.mental_script()
+    return render(request, 'quiz.html', {'data': data})
 
 # View to handle stopping the recording
 @csrf_exempt
@@ -95,3 +100,36 @@ def start_view(request):
     except Exception as e:
         return JsonResponse({'status': 'error', 'message': str(e)})
     
+
+@csrf_exempt
+def submit_sliders(request):
+    if request.method == "POST":
+        try:
+            data = json.loads(request.body)
+            values = data.get('values', [])
+            print("Received slider values:", values)
+            # Your processing logic here
+            result = grammar_judge.score_analys(values)
+            score = grammar_judge.get_score(values)
+
+
+            request.session['result'] = result
+            request.session['score'] = score
+
+            return JsonResponse({
+            'status': 'ok',
+            'message': 'Sliders received',
+            'redirect_url': '/result/',
+            # 'result': result,
+            })
+        except Exception as e:
+            print("Error in submit_sliders:", e)
+            return JsonResponse({'status': 'error', 'message': str(e)}, status=500)
+    return JsonResponse({'error': 'Invalid method'}, status=405)
+
+def result_page(request):
+    result = request.session.get('result', None)
+    score = request.session.get('score', None)
+    if not result:
+        result = "No result found."
+    return render(request, 'result.html', {'result': result, 'score': score})

@@ -1,10 +1,4 @@
-import google.generativeai as genai
-import markdown2
-genai.configure(api_key="AIzaSyCAwLoFxVtbD62IdB60H8geWmFGKYEwxgs")
-# Gemini - 1.5 - pro
-model = genai.GenerativeModel("gemini-2.0-flash-lite")  
-
-# Định nghĩa vai trò bằng prompt hệ thống
+g
 
 dass = {
        "stress",
@@ -131,13 +125,6 @@ score_control = """
        Script to evaluate:
 """
 
-emotion_checking = """
-Based on DASS-21 severity levels (Normal, Mild, Moderate, Severe, Extremely Severe), provide specific, actionable self-care activities, gentle encouragement, and potential consequences if symptoms persist. Keep each recommendation to 70 words or less.
-Be supportive and encouraging
-No markdown.
-  
-"""
-
 
 chat = model.start_chat()
 # Hàm vào = mess, đầu ra là chuỗi được đánh markdown html 
@@ -154,21 +141,20 @@ def check_script():
        reply = chat.send_message(user_message)
 
        mess = score_accuracy + user_message
-       data["accuracy"] = chat.send_message(mess).text 
+       data["accuracy"] = '100%' #chat.send_message(mess).text 
        mess = score_range + user_message
-       data["range"] =  chat.send_message(mess).text
+       data["range"] =  '100%' #chat.send_message(mess).text
        mess = score_control + user_message
-       data["control"] = chat.send_message(mess).text
+       data["control"] =  '100%' #chat.send_message(mess).text
        data["fix"] = reply.text
        
        # Mental Health
        return data
 
-
 def mental_script():
        global user_message
        data = []
-       with open('text_data/script.txt', 'r', encoding='utf-8') as file:
+       with open('turto/text_data/script.txt', 'r', encoding='utf-8') as file:
               user_message = file.read()
       
        for key in dass:
@@ -176,93 +162,12 @@ def mental_script():
                      question_start = mental_instruction + "\nQuestion: " + quest + " "
                      question_start = question_start + "Script: " + user_message
                      new_question = chat.send_message(question_start)
-                     combine = [new_question.text, key]
-                     data.append(combine)
-       #data = [['I find it hard to wind down.\n', 'stress'], ['I tended to over-react to situations.\n', 'stress'], ['I felt I was using a lot of nervous energy.\n', 'stress'], ['I found myself getting agitated.\n', 'stress'], ['I found it difficult to relax.\n', 'stress'], ['I was intolerant of things that slowed me.\n', 'stress'], ['I felt that I was rather touchy.\n', 'stress'], ['I couldn’t feel any positive feeling.\n', 'depression'], ['I found it hard to start things.\n', 'depression'], ['I felt I had nothing to look forward to.\n', 'depression'], ['I felt down-hearted and blue.\n', 'depression'], ['I was not enthusiastic about anything.\n', 'depression'], ['I felt I wasn’t worth much.\n', 'depression'], ['I felt that life was meaningless.\n', 'depression'], ['I was aware of dryness of my mouth.\n', 'anxiety'], ['I experienced breathing difficulty.\n', 'anxiety'], ['I experienced trembling in hands.\n', 'anxiety'], ['I worried about panic situations.\n', 'anxiety'], ['I felt I was close to panic.\n', 'anxiety'], ['I felt my heart action.\n', 'anxiety'], ['I felt scared without good reason.\n', 'anxiety']]     
+                     print(new_question.text)
+                     data.append(new_question.text)
        return data
+                 
 
-def classify_score(score, category):
-    if category == 'Depression':
-        if 0 <= score <= 9:
-            return 'Normal'
-        elif 10 <= score <= 13:
-            return 'Mild'
-        elif 14 <= score <= 20:
-            return 'Moderate'
-        elif 21 <= score <= 27:
-            return 'Severe'
-        elif score >= 28:
-            return 'Extremely Severe'
-    elif category == 'Anxiety':
-        if 0 <= score <= 7:
-            return 'Normal'
-        elif 8 <= score <= 9:
-            return 'Mild'
-        elif 10 <= score <= 14:
-            return 'Moderate'
-        elif 15 <= score <= 19:
-            return 'Severe'
-        elif score >= 20:
-            return 'Extremely Severe'
-    elif category == 'Stress':
-        if 0 <= score <= 14:
-            return 'Normal'
-        elif 15 <= score <= 18:
-            return 'Mild'
-        elif 19 <= score <= 25:
-            return 'Moderate'
-        elif 26 <= score <= 33:
-            return 'Severe'
-        elif score >= 34:
-            return 'Extremely Severe'
-    return 'Invalid category'
-
-def score_analys(val):
-    status = {}  # use a dictionary, not a list
-    score = {"Stress": 0, "Anxiety": 0, "Depression": 0}  
-    
-    for i in range(0, 7):
-        score["Stress"] += val[i]
-    
-    for i in range(7, 14):
-        score["Anxiety"] += val[i]
-    
-    for i in range(14, 21):
-        score["Depression"] += val[i]
-
-    score["Stress"] *= 2
-    score["Depression"] *= 2
-    score["Anxiety"] *= 2
-
-    mess = emotion_checking
-    status["Stress"] = classify_score(score["Stress"], "Stress")
-    status["Anxiety"] = classify_score(score["Anxiety"], "Anxiety")
-    status["Depression"] = classify_score(score["Depression"], "Depression")
-    
-    mess = mess + '\n' + "Stress: " + status["Stress"]
-    mess = mess + '\n' + "Anxiety: " + status["Anxiety"]
-    mess = mess + '\n' + "Depression: " + status["Depression"]
-    
-    ans = chat.send_message(mess)
-    return ans.text
-
-def get_score(val):
-    score = {"Stress": 0, "Anxiety": 0, "Depression": 0}  
-    for i in range(0, 7):
-        score["Stress"] += val[i]
-    for i in range(7, 14):
-        score["Anxiety"] += val[i]
-    for i in range(14, 21):
-        score["Depression"] += val[i]
-
-    score["Stress"] *= 2
-    score["Depression"] *= 2
-    score["Anxiety"] *= 2
-
-    return score
-         
 
 if __name__ == "__main__":
-       a = [3,2,0,0,0,1,3,4,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
-       data = score_analys(a)
+       data = mental_script()
        print(data)

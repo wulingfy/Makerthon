@@ -30,6 +30,23 @@ html, body {
     --light-color: #383855;
 }
 
+/* width of the scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+/* track */
+::-webkit-scrollbar-track {
+  background: var(--secondary-color);
+}
+
+/* thumb */
+::-webkit-scrollbar-thumb {
+  background-color: var(--light-color);
+  border-radius: 6px;
+  border: 3px solid var(--secondary-color);
+}
+
 body {
     background-color: var(--secondary-color);
 }
@@ -412,4 +429,61 @@ button:focus {
   position: fixed;
   top: 80px;
   right: 25px;
+}
+
+.quiz-btn-div {
+  display: flex;
+  justify-content: center; 
+  width: 100vw;
+}
+
+.quiz-btn {
+  background: linear-gradient(45deg, #21a260, #9eda4a);
+  color: white;
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+.criteria {
+  color: white;
+  background-color: var(--dark-color);
+  border-radius: 16px;
+  margin: 2rem;
+  padding: 1em;
+  width: 60%;
+  margin-left: 20%;
+}
+
+.questionaire {
+  margin-bottom: 20px;
+  padding: 1em;
+  width: 60%;
+  margin-left: 20%;
+  color: white;
+  background-color: var(--primary-color);
+  border-radius: 20px;
+}
+
+.result-page {
+  display: flex; align-items: flex-start; gap: 40px;
+}
+
+.result-text {
+  flex: 1; font-size: 18px; white-space: pre-line;
+  margin: 10px;
+  background-color: var(--dark-color);
+  border-radius: 16px;
+  padding: 10px;
+}
+
+#scoreChart {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.btn-div {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  margin: 1rem;
 }
